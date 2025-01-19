@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='style.css'>
     <title>Отправка сообщений</title>
+    <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
         (function() {
             emailjs.init({
-                publicKey: 'qPA7E-OdBnhkf6T8I' // Замените на ваш Public Key
+                publicKey: 'nKvhOROLNocKqge6C' // Замените на ваш Public Key
             });
         })();
     </script>
 </head>
 <body>
     <h1>Отправка сообщений</h1>
-    <form id="message-form">
-        <textarea name="user_message" placeholder="Введите ваше сообщение" rows="5" required></textarea>
-        <button type="submit">Отправить</button>
-    </form>
-
+    <div class="container">
+        <form id="message-form">
+            <h1>Заказать строителей</h1>
+            <textarea name="user_message" placeholder="Введите ваше сообщение" rows="5" required></textarea><br>
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
     <script>
         document.getElementById('message-form').addEventListener('submit', function(event) {
             event.preventDefault();
