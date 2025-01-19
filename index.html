@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Отправка сообщений</title>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
         (function() {
             emailjs.init({
-                publickey: 'nKvhOROLNocKqge6C'
+                publicKey: 'nKvhOROLNocKqge6C' // Замените на ваш Public Key
             });
         })();
     </script>
@@ -16,15 +16,16 @@
 <body>
     <h1>Отправка сообщений</h1>
     <form id="message-form">
-        <textarea name="user_message" placeholder='Введите ваше сообщение' rows="5" required></textarea>
+        <textarea name="user_message" placeholder="Введите ваше сообщение" rows="5" required></textarea>
         <button type="submit">Отправить</button>
     </form>
+
     <script>
         document.getElementById('message-form').addEventListener('submit', function(event) {
             event.preventDefault();
 
             emailjs.send('service_crvwuwn', 'template_0wwuv6i', {
-                message: this.user_message.value
+                message: this.user_message.value // Отправляем введенный текст
             })
             .then(function() {
                 alert('Сообщение успешно отправлено!');
